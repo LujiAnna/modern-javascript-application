@@ -1,3 +1,8 @@
+import {date} from './modules/date.js';
+
+'use strict';
+// check
+// import {greetings} from './modules/greetings.js'
 // trigger drop down
 $(".dropdown-trigger").dropdown();
 
@@ -15,14 +20,13 @@ const time = document.querySelector('.time');
 const timeWeather = document.querySelector('.time-weather');
 const greetings = document.querySelector('#greetings');
 
-// TIME
-let timeObject = new Date();
-let getHourz = timeObject.getHours();
-let getMinutez = timeObject.getMinutes();
-let getDay = timeObject.getUTCDay();
+// TIME & DATE
+// let timeObject = new Date();
+
+let getDay = date.getUTCDay();
 // console.log(getDay); //0 for Sunday, 1 for Monday, 2 for Tuesday, and so on.
 
-// Determine days
+// DAYS
 switch(getDay) {
   case 0:
     getDay = 'Sunday';
@@ -49,15 +53,19 @@ switch(getDay) {
     getDay = 'Coffee Time';
 }
 
-let greeting = () => {
+let getHourz = date.getHours();
+  let getMinutez = date.getMinutes();
 
 getHourz < 10 ? getHourz = '0' + getHourz: getHourz;
 getMinutez < 10 ? getMinutez = '0' + getMinutez : getMinutez;
-getHourz < 12 ? greet = 'Good morning': 
-getHourz < 18 ? greet = 'Good afternoon': greet = 'Good evening';     
 
-return greet;
-};
+let greeting = () => {
+  let greet ='';
+  getHourz < 12 ? greet = 'Good morning': 
+  getHourz < 18 ? greet = 'Good afternoon': greet = 'Good evening';     
+  return greet;
+}
+  
 
 // console.log(getMinutez);
 // console.log(typeof(getMinutez));
