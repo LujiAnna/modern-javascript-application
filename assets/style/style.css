@@ -1,0 +1,84 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  opacity: 0.9;
+  font-size: 100%;
+}
+
+html, body, .app {
+  height: 100%;
+}
+
+nav {
+  opacity: 0.8;
+}
+
+h1{
+  font-weight: 500!important;
+}
+
+h4 {
+  font-weight: 700;
+font-size: 600%!important;
+}
+
+.output-field p {
+  line-height: 1.85;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.show-day {
+  font-weight: 300!important;
+  font-size: 90%;
+}
+
+.name-day {
+  font-size: 90%!important;
+}
+
+.forecast {
+  padding: 20px;
+  /* background-color: goldenrod!important; */
+  /* font-size: 150%!important; */
+}
+
+.forecast .col {
+  margin-right: 10px;
+  padding-right: 25px;
+}
+
+/* dropdown */
+.dropdown-content{
+  width: max-content !important;
+  height:auto !important;
+}
+
+#icon {
+  float: right;
+  width: 50px;
+  height: 50px;
+}
+
+/* GRAPH */
+
+.graph-area h5 button {
+  text-transform: capitalize!important;
+}
+
+/* ACCORDION */
+
+.content {
+  display: none;
+  padding: 20px;
+  border: solid 1px #000;
+  width: 80%;
+  height: 100px;
+}
+
+.main button{
+  color: #61695f!important;
+}
+
+.active {
+  display: block;
+}
