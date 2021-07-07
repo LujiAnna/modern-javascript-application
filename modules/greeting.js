@@ -1,9 +1,8 @@
-export let greeting = () => {
+import {date} from './date.js';
 
-  getHourz < 10 ? getHourz = '0' + getHourz: getHourz;
-  getMinutez < 10 ? getMinutez = '0' + getMinutez : getMinutez;
-  getHourz < 12 ? greet = 'Good morning': 
-  getHourz < 18 ? greet = 'Good afternoon': greet = 'Good evening';     
-  
+export let greeting = () => {
+  let greet ='';
+  date.getHours() < 12 ? greet = 'Good morning': 
+  date.getHours() < 18 ? greet = 'Good afternoon': greet = 'Good evening';     
   return greet;
-  };
+}

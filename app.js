@@ -1,4 +1,6 @@
 import {date} from './modules/date.js';
+import {greeting} from './modules/greeting.js';
+
 
 'use strict';
 // check
@@ -53,26 +55,36 @@ switch(getDay) {
     getDay = 'Coffee Time';
 }
 
-let getHourz = date.getHours();
-  let getMinutez = date.getMinutes();
+let timeStamp = () => {
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
 
-getHourz < 10 ? getHourz = '0' + getHourz: getHourz;
-getMinutez < 10 ? getMinutez = '0' + getMinutez : getMinutez;
+  console.log(hours, minutes)
 
-let greeting = () => {
-  let greet ='';
-  getHourz < 12 ? greet = 'Good morning': 
-  getHourz < 18 ? greet = 'Good afternoon': greet = 'Good evening';     
-  return greet;
+  hours < 10 ? hours = '0' + hours: hours;
+  minutes < 10 ? minutes = '0' + minutes : minutes;
+
+return { 
+  hours: hours,
+  minutes: minutes 
+};
+
 }
-  
+
+timeStamp();
+
+// let getHourz = date.getHours();
+//   let getMinutez = date.getMinutes();
+
+// getHourz < 10 ? getHourz = '0' + getHourz: getHourz;
+// getMinutez < 10 ? getMinutez = '0' + getMinutez : getMinutez;
 
 // console.log(getMinutez);
 // console.log(typeof(getMinutez));
 greetings.innerHTML = greeting();
 console.log(greeting());
 
-time.innerHTML = `<span class='show-day'>${getDay}</span> ${getHourz}:${getMinutez}`;
+time.innerHTML = `<span class='show-day'>${getDay}</span> ${timeStamp.hours}:${timeStamp.minutes}`;
 
 // LOCATION
 // var options = {
