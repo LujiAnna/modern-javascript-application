@@ -24,7 +24,7 @@ let day = date.getUTCDay();
   case 5:
     day = 'Friday';
     break;  
-  case 5:
+  case 6:
     day = 'Saturday';
       break; 
   default:

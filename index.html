@@ -22,7 +22,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="./assets/style/normalize.css">
     <link rel="stylesheet" href="./assets/style/style.css">    
-
   </head>
   <body>
   <div class="row app valign-wrapper">
@@ -63,31 +62,27 @@
                   <span class="helper-text" data-error="wrong" data-success="right" id='place-city'></span>
                   <span class="helper-text" data-error="wrong" data-success="right" id='forecast'></span>
                   <div class="row forecast">
-                   
-
                     <div class="col s1" id='daily-forecast'>
-                          <span class="card-title name-day">Fri</span>
-                          <p class="day"></p>
-                        </div>
-
-                        <div class="col s1">
-                          <span class="card-title name-day">Sat</span>
-                          <p class="day"></p>
-                        </div>
-                        <div class="col s1">
-                          <span class="card-title name-day">Sun</span>
-                          <p class="day"></p>
-                        </div>
-                        <div class="col s1">
-                          <span class="card-title name-day">Mon</span>
-                          <p class="day"></p>
-                        </div>
-                        <div class="col s1">
-                          <span class="card-title name-day">Tue</span>
-                          <p class="day"></p>
-                        </div>
+                      <span class="card-title name-day"></span>
+                      <p class="day"></p>
                     </div>
-                    
+                    <div class="col s1">
+                      <span class="card-title name-day"></span>
+                      <p class="day"></p>
+                    </div>
+                    <div class="col s1">
+                      <span class="card-title name-day"></span>
+                      <p class="day"></p>
+                    </div>
+                    <div class="col s1">
+                      <span class="card-title name-day"></span>
+                      <p class="day"></p>
+                    </div>
+                    <div class="col s1">
+                      <span class="card-title name-day"></span>
+                      <p class="day"></p>
+                    </div>
+                  </div>   
                 </div>
                 <div class="output-field col s6">
                   <h4 id='temp' class="center-align teal-text darken-4 flow-text"></h4>
@@ -95,26 +90,12 @@
                   <p class='high-low'></p>
                   <p class='description'></p>
                   <p class='rain'></p>
-
                 </div>
-
               </div>
-
-                <!-- <div class="row">
-                  <div class="col s12">
-                    City:
-                    <div class="input-field inline">
-                      <input id="city_inline" placeholder="Placeholder"  type="text" class="validate">
-                      <label for="city_inline">City</label>
-                      <span class="helper-text" data-error="wrong" data-success="right">Please enter your city</span>
-                    </div>
-                  </div>
-                </div> -->
               </form>
             </div>
           <!-- button: GO -->
           <button class="waves-effect  waves-light btn-large"><i class="material-icons right">cloud</i>go</button>
-
         </main>
         <!-- GRAPHS -->
            <div class="row graph-area center-align">
@@ -135,18 +116,13 @@
                     <button class="waves-effect waves-teal btn-flat">Wind</button>
                   </h5>
                   <canvas class='content' id="Wind"></canvas>
-                  </div>
-                 
+                  </div>              
            </div>
         <!-- close card -->
       </div>
     </div>
     <!-- close app -->
-  </div>
-   
-  <!-- <script type="module" src="config.js"></script> -->
-  <!-- <script src="config.js"></script> -->
+  </div> 
     <script type="module" src="app.js" async defer></script>
-
   </body>
 </html>

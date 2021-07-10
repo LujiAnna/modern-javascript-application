@@ -20,6 +20,8 @@ const description = document.querySelector('.description');
 
 // FORECAST 
 const days = document.querySelectorAll('.day');
+const daysName = document.querySelectorAll('.name-day');
+
 
 // API
 const api = 'https://api.openweathermap.org/data/2.5';
@@ -88,7 +90,7 @@ return fetch(urlDailyWeather)
     console.log(data);
 
   let newDiv = [];
-  let newStr = {};
+  let dateObj = [];
 
 days.forEach((singleDay, index) => {
   singleDay.innerHTML = `${Math.round(data.daily[index].temp.max)}&deg; <span class="helper-text  grey-text lighten-5">${Math.round(data.daily[index].temp.min)}&deg;</span>`;
@@ -106,21 +108,28 @@ days.forEach((singleDay, index) => {
 
   // TODO: Ask about this. seems to be about 3.5 hours behind(-), or half hour ahead(+)
   // Date - Full
-  console.log(new Date(data.daily[index].dt*1000 - (data.timezone_offset*1000))); // minus OR plus
+  // console.log(new Date(data.daily[index].dt*1000 - (data.timezone_offset*1000))); // minus OR plus
   // Day - Numerical
-  console.log(new Date(data.daily[index].dt*1000 - (data.timezone_offset*1000)).getDay()); // minus OR plus
+  // console.log(new Date(data.daily[index].dt*1000 - (data.timezone_offset*1000)).getDay()); // minus OR plus
   // Day - Words - Cant work as its parsing today's date only
 
   // TODO: grab the first part with day's name. By first stringify the object 
-  // console.log(new Date(data.daily[index].dt*1000 - (data.timezone_offset*1000)).getDay()); // minus OR plus
+  // console.log(new Date(data.daily[index].dt*1000 - (data.timezone_offset*1000)).toDateString()); // minus OR plus
 
-    // create a new div element
-     newDiv[index] = document.createElement("div");
-     console.log(newDiv[index]);
+  dateObj.push(new Date(data.daily[index].dt*1000 - (data.timezone_offset*1000)).toDateString());
+  console.log((dateObj[index]).split(' ')[0]);
+  // const event = new Date(1993, 6, 28, 14, 39, 7);
+  // event.toDateString().toString().split(' ')
+  // (4) ['Wed', 'Jul', '28', '1993']
+  // event.toDateString().toString().split(' ')[0]  // 'Wed'
 
-      // and give it some content
-    const newContent = document.createTextNode("Hi there and greetings!");
+  daysName[index].innerHTML = `${(dateObj[index]).split(' ')[0]}`;
+  
 });
+
+// let addContent = () => {
+
+// }
   // document.body.onload = addElement;
 
   // function addElement () {
